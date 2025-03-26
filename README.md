@@ -27,11 +27,12 @@ Automated API tests for JSONPlaceholder using Cypress.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/jsonplaceholder-api-tests.git
+   git clone https://github.com/EugeneUstymenko/jsonplaceholder-api-tests.git
    cd jsonplaceholder-api-tests
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -39,6 +40,7 @@ Automated API tests for JSONPlaceholder using Cypress.
 ## Running Tests
 
 1. Run all API tests in headless mode:
+
    ```bash
    npm run test:api
    ```
@@ -60,49 +62,50 @@ This project uses several tools to ensure code quality:
    ```
 
 3. Format code with Prettier
+   
    ```bash
    npm run prettier
    ```
 
 ## Project Structure
 
+```
 jsonplaceholder-api-tests/
-│
-├── .github/ # GitHub-specific files
-│ └── workflows/ # GitHub Actions workflows
-│ └── api-tests.yml # API tests workflow configuration
+├── .github/                          # GitHub-specific files
+│   └── workflows/                    # GitHub Actions workflows
+│       └── api-tests.yml             # API tests workflow configuration
 │
 ├── cypress/
-│ ├── api/ # API Tests
-│ │ ├── users.spec.ts # Tests for users endpoint
-│ │ └── posts.spec.ts # Tests for posts endpoint
-│ │
-│ ├── fixtures/ # Test Data
-│ │ └── testData.json # Test data for API tests
-│ │
-│ └── support/ # Support Files
-│ ├── api.ts # Main API support file
-│ ├── commands.ts # Custom Cypress commands
-│ ├── index.d.ts # TypeScript declarations
-│ │
-│ ├── apiClients/ # API Clients
-│ │ ├── usersClient.ts # Client for users endpoint
-│ │ └── postsClient.ts # Client for posts endpoint
-│ │
-│ └── interfaces/ # TypeScript Interfaces
-│ ├── user.interface.ts # User data interface
-│ └── post.interface.ts # Post data interface
+│   ├── api/                          # API Tests
+│   │   ├── users.spec.ts             # Tests for users endpoint
+│   │   └── posts.spec.ts             # Tests for posts endpoint
+│   │
+│   ├── fixtures/                     # Test Data
+│   │   └── testData.json             # Test data for API tests
+│   │
+│   └── support/                      # Support Files
+│       ├── api.ts                    # Main API support file
+│       ├── commands.ts               # Custom Cypress commands
+│       ├── index.d.ts                # TypeScript declarations
+│       │
+│       ├── apiClients/               # API Clients
+│       │   ├── usersClient.ts        # Client for users endpoint
+│       │   └── postsClient.ts        # Client for posts endpoint
+│       │
+│       └── interfaces/               # TypeScript Interfaces
+│           ├── user.interface.ts     # User data interface
+│           └── post.interface.ts     # Post data interface
 │
-├── .gitignore # Git ignore file
-├── .prettierrc # Prettier configuration
-├── .prettierignore # Prettier ignore file
-├── cypress.config.ts # Cypress configuration
-├── eslint.config.mjs # ESLint configuration
-├── jsonplaceholder-api-tests.iml # IntelliJ IDEA project file
-├── package.json # Project dependencies
-├── package-lock.json # Locked dependencies
-├── README.md # Project documentation
-└── tsconfig.json # TypeScript configuration
+├── .gitignore                        # Git ignore file
+├── .prettierrc                       # Prettier configuration
+├── .prettierignore                   # Prettier ignore file
+├── cypress.config.ts                 # Cypress configuration
+├── eslint.config.mjs                 # ESLint configuration
+├── package.json                      # Project dependencies
+├── package-lock.json                 # Locked dependencies
+├── README.md                         # Project documentation
+└── tsconfig.json                     # TypeScript configuration
+```
 
 ## API Endpoints and Test Scenarios
 
