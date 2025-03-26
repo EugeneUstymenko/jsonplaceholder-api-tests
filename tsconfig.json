@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "noEmitOnError": true,
+    "resolveJsonModule": true,
+    "types": ["cypress", "node", "cypress-plugin-api"],
+    "baseUrl": "./cypress",
+    "paths": {
+      "@support/*": ["cypress/support/*"],
+      "@interfaces/*": ["cypress/support/interfaces/*"],
+      "@apiClients/*": ["cypress/support/apiClients/*"]
+    }
+  },
+  "include": ["cypress/**/*.ts", "*.ts"]
+}
