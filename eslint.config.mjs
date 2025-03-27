@@ -5,15 +5,15 @@ import cypressPlugin from 'eslint-plugin-cypress';
 import globals from 'globals';
 
 export default [
-  // Базовые рекомендуемые правила JavaScript
+  // Basic recommended JavaScript rules
   js.configs.recommended,
 
-  // Игнорируем директории, которые не нужно проверять
+  // Ignore directories that don't need to be checked
   {
     ignores: ['**/node_modules/**', 'dist/**', 'build/**', 'coverage/**'],
   },
 
-  // Общие правила для всех файлов TypeScript и JavaScript
+  // Common rules for all TypeScript and JavaScript files
   {
     files: ['**/*.ts', '**/*.js'],
     plugins: {
@@ -27,7 +27,7 @@ export default [
         sourceType: 'module',
         project: './tsconfig.json',
       },
-      // Добавляем все необходимые глобальные переменные
+      // Add all necessary global variables
       globals: {
         ...globals.node,
         ...globals.mocha, // describe, it, before, beforeEach, after, afterEach
@@ -39,18 +39,18 @@ export default [
       },
     },
     rules: {
-      // Отключаем правила JavaScript, которые заменяются TypeScript-версиями
+      // Disable JavaScript rules that are replaced by TypeScript versions
       'no-unused-vars': 'off',
-      'no-undef': 'off', // TypeScript сам проверяет типы
+      'no-undef': 'off', // TypeScript checks types itself
       'no-redeclare': 'off',
 
-      // Общие правила кодирования
+      // General coding rules
       'no-console': 'warn',
       'no-debugger': 'error',
       eqeqeq: ['error', 'always', { null: 'ignore' }],
       curly: ['error', 'all'],
 
-      // TypeScript-специфичные правила
+      // TypeScript-specific rules
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-empty-object-type': 'off',
@@ -59,7 +59,7 @@ export default [
       '@typescript-eslint/no-inferrable-types': 'error',
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
 
-      // Cypress-специфичные правила
+      // Cypress-specific rules
       'cypress/no-unnecessary-waiting': 'warn',
       'cypress/no-async-tests': 'error',
       'cypress/assertion-before-screenshot': 'warn',
@@ -68,18 +68,18 @@ export default [
     },
   },
 
-  // Дополнительные правила для тестовых файлов
+  // Additional rules for test files
   {
     files: ['cypress/api/**/*.spec.ts'],
     rules: {
-      // В тестовых файлах разрешаем использование any, так как иногда это необходимо
+      // Allow using 'any' in test files, as sometimes it's necessary
       '@typescript-eslint/no-explicit-any': 'off',
-      // Разрешаем длинные функции в тестах
+      // Allow long functions in tests
       'max-lines-per-function': 'off',
     },
   },
 
-  // Правила для файлов поддержки Cypress
+  // Rules for Cypress support files
   {
     files: ['cypress/support/**/*.ts'],
     rules: {
@@ -88,7 +88,7 @@ export default [
     },
   },
 
-  //?
+  // Special rules for API client files
   {
     files: ['cypress/support/apiClients/*.ts'],
     rules: {
